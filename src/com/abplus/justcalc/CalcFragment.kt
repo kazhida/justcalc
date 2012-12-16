@@ -353,11 +353,11 @@ class CalcFragment(): Fragment() {
             (a: Double): Double -> 1 / a
         })
 
-        activity?.findViewById(R.id.calc_button_add)?.setOnClickListener(DoListener(ADD))
-        activity?.findViewById(R.id.calc_button_sub)?.setOnClickListener(DoListener(SUB))
-        activity?.findViewById(R.id.calc_button_mul)?.setOnClickListener(DoListener(MUL))
-        activity?.findViewById(R.id.calc_button_div)?.setOnClickListener(DoListener(DIV))
-        activity?.findViewById(R.id.calc_button_ent)?.setOnClickListener(DoListener(ENT))
+        activity?.findViewById(R.id.calc_button_add)?.setOnClickListener(DoListener(Operator.ADD))
+        activity?.findViewById(R.id.calc_button_sub)?.setOnClickListener(DoListener(Operator.SUB))
+        activity?.findViewById(R.id.calc_button_mul)?.setOnClickListener(DoListener(Operator.MUL))
+        activity?.findViewById(R.id.calc_button_div)?.setOnClickListener(DoListener(Operator.DIV))
+        activity?.findViewById(R.id.calc_button_ent)?.setOnClickListener(DoListener(Operator.ENT))
     }
 
     private class MoListener(val f: (Double) -> Double): OnClickListener {
@@ -366,7 +366,7 @@ class CalcFragment(): Fragment() {
         }
     }
 
-    private class DoListener(val operator: Int): OnClickListener {
+    private class DoListener(val operator: Operator): OnClickListener {
         public override fun onClick(v: View?) {
             stack.push(accumulator, operator)
 
@@ -378,14 +378,15 @@ class CalcFragment(): Fragment() {
         }
     }
 
-    //  enumがないので整数の定数で代用
-    private val ADD = 0
-    private val SUB = 1
-    private val MUL = 2
-    private val DIV = 3
-    private val ENT = 4
+    enum class Operator {
+        ADD
+        SUB
+        MUL
+        DIV
+        ENT
+    }
 
-    private class StackItem(val value: Double, val operator: Int)
+    private class StackItem(val value: Double, val operator: Operator)
 
     private class Stack() {
         val buf = ArrayList<StackItem>()
@@ -394,7 +395,7 @@ class CalcFragment(): Fragment() {
             buf.clear()
         }
 
-        fun push(value: Double, operator: Int): Boolean {
+        fun push(value: Double, operator: Operator): Boolean {
             return buf.add(StackItem(value, operator))
         }
 
@@ -403,7 +404,7 @@ class CalcFragment(): Fragment() {
             if (top != null) {
                 return top
             }  else {
-                return StackItem(0.0, ENT)
+                return StackItem(0.0, Operator.ENT)
             }
         }
 
@@ -416,13 +417,13 @@ class CalcFragment(): Fragment() {
         fun eval(): Boolean {
             val v2 = pop()
             val v1 = pop()
-            if (v2.operator == MUL || v2.operator == DIV) {
+            if (v2.operator == Operator.MUL || v2.operator == Operator.DIV) {
                 when (v1.operator) {
-                    MUL -> {
+                    Operator.MUL -> {
                         buf.add(StackItem(v1.value * v2.value, v2.operator))
                         return true
                     }
-                    DIV -> {
+                    Operator.DIV -> {
                         buf.add(StackItem(v1.value / v2.value, v2.operator))
                         return true
                     }
@@ -434,22 +435,22 @@ class CalcFragment(): Fragment() {
                 }
             } else {
                 when (v1.operator) {
-                    MUL -> {
+                    Operator.MUL -> {
                         buf.add(StackItem(v1.value * v2.value, v2.operator))
                         eval()
                         return true
                     }
-                    DIV -> {
+                    Operator.DIV -> {
                         buf.add(StackItem(v1.value / v2.value, v2.operator))
                         eval()
                         return true
                     }
-                    ADD -> {
+                    Operator.ADD -> {
                         buf.add(StackItem(v1.value + v2.value, v2.operator))
                         eval()
                         return true
                     }
-                    SUB -> {
+                    Operator.SUB -> {
                         buf.add(StackItem(v1.value - v2.value, v2.operator))
                         eval()
                         return true
