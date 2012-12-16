@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Just Calculator</string>
+    <string name="app_name">just-a-calc</string>
 
     <string name="calc_sin">sin</string>
     <string name="calc_cos">cos</string>
