@@ -5,9 +5,14 @@
     <string name="calc_sin">sin</string>
     <string name="calc_cos">cos</string>
     <string name="calc_tan">tan</string>
+    <string name="calc_arc_sin">sin-1</string>
+    <string name="calc_arc_cos">cos-1</string>
+    <string name="calc_arc_tan">tan-1</string>
     <string name="calc_sqrt">√￣</string>
 
     <string name="calc_x">x</string>
+    <string name="calc_x2">x2</string>
+
     <string name="calc_0">0</string>
     <string name="calc_1">1</string>
     <string name="calc_2">2</string>

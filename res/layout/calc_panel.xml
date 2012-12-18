@@ -92,42 +92,22 @@
                 android:textColor="@color/calc_caption_dark"
                 android:text="@string/calc_tan"
                 />
-        <LinearLayout
+        <TextView
                 android:id="@+id/calc_button_square"
-                android:orientation="horizontal"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:padding="0dp"
                 android:background="@drawable/bg_calc_func_button"
-                >
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:gravity="right|center_vertical"
-                    android:textSize="9pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_x"
-                    />
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:gravity="left"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:textSize="6pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_2"
-                    />
-        </LinearLayout>
+                android:textSize="9pt"
+                android:textColor="@color/calc_caption_dark"
+                android:text="@string/calc_x2"
+                />
 
         <TextView
                 android:id="@+id/calc_button_reverse"
@@ -145,7 +125,6 @@
                 android:textColor="@color/calc_caption_dark"
                 android:text="@string/calc_plus_minus"
                 />
-
     </TableRow>
 
     <!-- sin-1, cos-1, tan-1, sqrt, 1/x -->
@@ -157,9 +136,8 @@
             android:layout_margin="0dp"
             >
 
-        <LinearLayout
+        <TextView
                 android:id="@+id/calc_button_arc_sin"
-                android:orientation="horizontal"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
@@ -167,39 +145,16 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="0dp"
+                android:gravity="center"
                 android:padding="0dp"
                 android:background="@drawable/bg_calc_func_button"
-                >
+                android:textSize="9pt"
+                android:textColor="@color/calc_caption_dark"
+                android:text="@string/calc_arc_sin"
+                />
 
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:gravity="right|center_vertical"
-                    android:textSize="8pt"
-                    android:padding="0dp"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_sin"
-                    />
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:textSize="6pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_minus_1"
-                    />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
                 android:id="@+id/calc_button_arc_cos"
-                android:orientation="horizontal"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
@@ -207,37 +162,15 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="0dp"
+                android:gravity="center"
                 android:padding="0dp"
                 android:background="@drawable/bg_calc_func_button"
-                >
-
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:gravity="right|center_vertical"
-                    android:padding="0dp"
-                    android:textSize="8pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_cos"
-                    />
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:gravity="left"
-                    android:textSize="6pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_minus_1"
-                    />
-        </LinearLayout>
-        <LinearLayout
+                android:textSize="9pt"
+                android:textColor="@color/calc_caption_dark"
+                android:text="@string/calc_arc_cos"
+                />
+        <TextView
                 android:id="@+id/calc_button_arc_tan"
-                android:orientation="horizontal"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
@@ -245,33 +178,13 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="0dp"
+                android:gravity="center"
                 android:padding="0dp"
                 android:background="@drawable/bg_calc_func_button"
-                >
-
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:gravity="right|center_vertical"
-                    android:textSize="8pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_tan"
-                    />
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:textSize="6pt"
-                    android:textColor="@color/calc_caption_dark"
-                    android:text="@string/calc_minus_1"
-                    />
-        </LinearLayout>
-
+                android:textSize="9pt"
+                android:textColor="@color/calc_caption_dark"
+                android:text="@string/calc_arc_tan"
+                />
         <TextView
                 android:id="@+id/calc_button_sqrt"
                 android:layout_width="0dp"
