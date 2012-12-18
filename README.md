@@ -1,4 +1,4 @@
-== Just-a-calc
+## Just-a-calc
 
 Kotlinで作った、普通のありふれた電卓。
 
@@ -21,12 +21,12 @@ Kotlinで作った、普通のありふれた電卓。
 
 実用するには、レイアウトをもう少し単純にする必要があります。
 
-=== Development environment
+### Development environment
 
 IntelliJ IDEA 12
 Kotlin plugin M4
 
-=== License
+### License
 
 Copyright (c) 2012, ABplus Inc.
 All rights reserved.
