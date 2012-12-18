@@ -20,12 +20,11 @@ Kotlinで作った、普通のありふれた電卓。
 表示するまでが、かなり遅いという致命的欠点を持っています。
 
 実用するには、レイアウトをもう少し単純にする必要があります。
-ブランチ切ってからレイアウトをいじったつもりがマスターまで一緒にコミットしちゃった。
 
 === Development environment
 
-IntelliJ IDEA 12
-Kotlin plugin M4
+* IntelliJ IDEA 12
+* Kotlin plugin M4
 
 === License
 
