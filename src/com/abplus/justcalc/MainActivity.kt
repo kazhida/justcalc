@@ -4,7 +4,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.app.Activity
-import android.app.FragmentManager;
+import android.app.FragmentManager
+import android.view.View
+import android.widget.FrameLayout
+import com.google.ads.AdView
+import com.google.ads.AdSize
+import com.google.ads.AdRequest
 
 /**
  * User: kazhida
@@ -13,6 +18,7 @@ import android.app.FragmentManager;
  */
 class MainActivity(): Activity() {
     var calcFragment: CalcFragment? = null
+    var adView: AdView? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +28,17 @@ class MainActivity(): Activity() {
         calcFragment = getFragmentManager()?.findFragmentById(R.id.calc) as CalcFragment?
 //        calcFragment?.hideMemoryRow()
 //        calcFragment?.hideFunctionRow()
+        adView = AdView(this, AdSize.BANNER, "a150d0490606375")
+
+        val layout = findViewById(R.id.banner_area) as FrameLayout
+        layout.addView(adView)
+
+        adView?.loadAd(AdRequest());
+    }
+
+    override fun onDestroy() {
+        adView?.destroy()
+        super.onDestroy()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

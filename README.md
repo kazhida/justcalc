@@ -23,8 +23,8 @@ Kotlinで作った、普通のありふれた電卓。
 
 ### Development environment
 
-IntelliJ IDEA 12
-Kotlin plugin M4
+* IntelliJ IDEA 12
+* Kotlin plugin M4
 
 ### License
 
