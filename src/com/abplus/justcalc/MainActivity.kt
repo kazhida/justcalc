@@ -3,20 +3,21 @@ package com.abplus.justcalc
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.app.Activity
-import android.app.FragmentManager
+import android.support.v4.app.FragmentActivity
+import android.support.v4.app.FragmentManager
 import android.view.View
 import android.widget.FrameLayout
 import com.google.ads.AdView
 import com.google.ads.AdSize
 import com.google.ads.AdRequest
 
+
 /**
  * User: kazhida
  * Date: 2012/08/15
  * Time: 11:53
  */
-class MainActivity(): Activity() {
+class MainActivity(): FragmentActivity() {
     var calcFragment: CalcFragment? = null
     var adView: AdView? = null;
 
@@ -25,7 +26,7 @@ class MainActivity(): Activity() {
         setContentView(R.layout.main)
 
         //  電卓フラグメントの初期化
-        calcFragment = getFragmentManager()?.findFragmentById(R.id.calc) as CalcFragment?
+        calcFragment = getSupportFragmentManager()?.findFragmentById(R.id.calc) as CalcFragment?
 //        calcFragment?.hideMemoryRow()
 //        calcFragment?.hideFunctionRow()
         adView = AdView(this, AdSize.BANNER, "a150d0490606375")
