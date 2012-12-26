@@ -44,6 +44,10 @@ class MainActivity(): FragmentActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         getMenuInflater()?.inflate(R.menu.options, menu)
+        if (calcFragment != null) {
+            menu?.findItem(R.id.calc_function_key_visible)?.setChecked(calcFragment!!.functionRowVisible())
+            menu?.findItem(R.id.calc_memory_key_visible)?.setChecked(calcFragment!!.memoryRowVisible())
+        }
         return true
     }
 

@@ -749,17 +749,4 @@
                 android:text="@string/calc_mc"
                 />
     </TableRow>
-
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            >
-        <FrameLayout
-                android:id="@+id/banner_area"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:padding="0dp"
-                />
-    </TableRow>
 </TableLayout>

@@ -100,6 +100,11 @@ class CalcFragment(): Fragment() {
         row?.setVisibility(View.VISIBLE)
     }
 
+    public fun memoryRowVisible(): Boolean {
+        val visibility = getActivity()?.findViewById(R.id.calc_memory_row)?.getVisibility()
+        return if (visibility != null) visibility == View.VISIBLE else false;
+    }
+
     public fun hideFunctionRow() {
         val row1: View? = getActivity()?.findViewById(R.id.calc_func_row1)
         row1?.setVisibility(View.GONE)
@@ -112,6 +117,11 @@ class CalcFragment(): Fragment() {
         row1?.setVisibility(View.VISIBLE)
         val row2: View? = getActivity()?.findViewById(R.id.calc_func_row2)
         row2?.setVisibility(View.VISIBLE)
+    }
+
+    public fun functionRowVisible(): Boolean {
+        val visibility = getActivity()?.findViewById(R.id.calc_func_row2)?.getVisibility()
+        return if (visibility != null) visibility == View.VISIBLE else false;
     }
 
     private fun delDigit() {
