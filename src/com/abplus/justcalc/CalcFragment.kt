@@ -1,6 +1,5 @@
 package com.abplus.justcalc
 
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +7,7 @@ import android.os.Bundle
 import android.view.View.OnClickListener
 import java.util.ArrayList
 import android.widget.TextView
+import android.app.Fragment
 
 /**
  * User: kazhida
@@ -370,13 +370,13 @@ class CalcFragment(): Fragment() {
         activity?.findViewById(R.id.calc_button_ent)?.setOnClickListener(DoListener(Operator.ENT))
     }
 
-    private class MoListener(val f: (Double) -> Double): OnClickListener {
+    private inner class MoListener(val f: (Double) -> Double): OnClickListener {
         public override fun onClick(v: View?) {
             accumulator = f(accumulator)
         }
     }
 
-    private class DoListener(val operator: Operator): OnClickListener {
+    private inner class DoListener(val operator: Operator): OnClickListener {
         public override fun onClick(v: View?) {
             stack.push(accumulator, operator)
 
